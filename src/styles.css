@@ -75,6 +75,13 @@ h1 {
   font-size: 0.92rem;
 }
 
+.hero .data-source {
+  margin-top: 8px;
+  color: #7fc196;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
 .hero strong,
 .hero em {
   color: #d8d8dc;
@@ -261,6 +268,15 @@ tbody th {
   letter-spacing: -0.01em;
 }
 
+tbody th small {
+  display: block;
+  margin-top: 3px;
+  color: #748274;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
 tbody tr + tr th,
 tbody tr + tr td {
   border-top: 1px solid rgba(255, 255, 255, 0.028);
@@ -306,6 +322,19 @@ tbody td {
 .bearish {
   color: #ff8787;
   background: rgba(188, 55, 55, 0.28);
+}
+
+.state-message {
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  padding: 28px;
+  color: #c8c8cc;
+  font-weight: 750;
+}
+
+.state-message.error {
+  color: #ff9d9d;
 }
 
 .sr-only {
