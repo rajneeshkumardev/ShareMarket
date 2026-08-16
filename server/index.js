@@ -1,10 +1,11 @@
 import express from "express";
-import yahooFinance from "yahoo-finance2";
+import YahooFinance from "yahoo-finance2";
 
 const app = express();
 const port = Number(process.env.PORT ?? 3001);
 const cacheTtlMs = 5 * 60 * 1000;
 const cache = new Map();
+const yahooFinance = new YahooFinance();
 
 const defaultSymbols = [
   "PGIL",
