@@ -29,8 +29,6 @@ const defaultSymbols = [
   "MARUTI",
 ];
 
-yahooFinance.suppressNotices(["yahooSurvey"]);
-
 function asYahooSymbol(symbol) {
   const cleanSymbol = symbol.trim().toUpperCase();
   return cleanSymbol.includes(".") ? cleanSymbol : `${cleanSymbol}.NS`;
