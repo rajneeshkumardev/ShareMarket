@@ -5,7 +5,7 @@ const app = express();
 const port = Number(process.env.PORT ?? 3001);
 const cacheTtlMs = 5 * 60 * 1000;
 const cache = new Map();
-const yahooFinance = new YahooFinance();
+const yahooFinance = new YahooFinance({ suppressNotices: ["yahooSurvey", "ripHistorical"] });
 
 const defaultSymbols = [
   "PGIL",
@@ -157,11 +157,13 @@ async function buildIndicator(symbol) {
   const yahooSymbol = asYahooSymbol(symbol);
   const period1 = new Date();
   period1.setDate(period1.getDate() - 220);
+  const period2 = new Date();
 
   const [quote, history] = await Promise.all([
     yahooFinance.quote(yahooSymbol),
     yahooFinance.historical(yahooSymbol, {
       period1,
+      period2,
       interval: "1d",
     }),
   ]);
